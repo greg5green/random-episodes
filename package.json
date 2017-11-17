@@ -2,11 +2,6 @@
   "name": "RandomEpisodes",
   "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    "jest-expo": "^21.0.2",
-    "react-native-scripts": "1.5.0",
-    "react-test-renderer": "16.0.0-alpha.12"
-  },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
     "android": "react-native-scripts android",
@@ -14,17 +9,37 @@
     "ios": "react-native-scripts ios",
     "lint": "eslint --format 'node_modules/eslint-friendly-formatter' --ext .js,.jsx ./src",
     "start": "react-native-scripts start",
-    "test": "node node_modules/jest/bin/jest.js --watch"
-  },
-  "jest": {
-    "preset": "jest-expo"
+    "test": "NODE_ENV=test mocha --opts 'support/mocha.opts' 'src/**/*.spec.*'",
+    "test:dev": "npm test -- -w",
+    "test:inspect": "npm test -- --inspect --debug-brk"
   },
   "dependencies": {
+    "axios": "^0.17.0",
+    "change-object-case": "^0.1.1",
+    "enzyme-adapter-react-16": "^1.0.4",
     "eslint": "^4.8.0",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-plugin-react": "^7.4.0",
     "expo": "^21.0.0",
+    "immutable": "^3.8.2",
+    "keymirror": "^0.1.1",
     "react": "16.0.0-alpha.12",
-    "react-native": "^0.48.4"
+    "react-native": "^0.48.4",
+    "redux-immutable": "^4.0.0",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "@jonny/react-native-mock": "^0.4.1",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^7.1.1",
+    "chai-immutable": "^1.6.0",
+    "chai-sorted": "^0.1.0",
+    "enzyme": "^3.1.1",
+    "faker": "^4.1.0",
+    "mocha": "^4.0.1",
+    "react-native-scripts": "1.5.0",
+    "react-test-renderer": "16.0.0-alpha.12",
+    "sinon": "^4.1.2",
+    "sinon-chai": "^2.14.0"
   }
 }

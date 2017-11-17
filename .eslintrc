@@ -348,7 +348,9 @@
     "node": true
   },
   "globals": {
+    "expect": true,
     "faker": true,
+    "sandbox": true,
     "shallow": true,
     "stub": true,
     "spy": true
