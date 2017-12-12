@@ -17,7 +17,7 @@ const apiService = {
 
   create() {
     const api = axios.create({
-      baseURL: '/api/v1'
+      baseURL: 'http://localhost:3000/api/v1'
     });
 
     api.interceptors.request.use(apiService.transformRequest);
@@ -45,6 +45,8 @@ const apiService = {
 
   transformResponse(response) {
     response.data = apiService.changeCase(response.data, 'camel');
+
+    console.log(response);
 
     return response;
   }
